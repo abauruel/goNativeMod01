@@ -3,21 +3,20 @@ import { View, Text, StyleSheet } from "react-native";
 
 import PropTypes from "prop-types";
 
-export default class Todo extends Component {
-  static defaultProps = {
-    title: "Valor Padrão"
-  };
-  static propTypes = {
-    title: PropTypes.string.isRequired
-  };
+const Todo = ({ title }) => (
+  <View>
+    <Text>{title}</Text>
+  </View>
+);
 
-  render() {
-    return (
-      <View>
-        <Text>{this.props.title}</Text>
-      </View>
-    );
-  }
-}
+Todo.defaultProps = {
+  title: "Valor Padrão"
+};
+
+Todo.propTypes = {
+  title: PropTypes.string.isRequired
+};
 
 const styles = StyleSheet.create({});
+
+export default Todo;
